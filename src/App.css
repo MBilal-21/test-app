@@ -1,38 +1,337 @@
-.App {
+*{
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  /* outline: 1px solid yellow; */
+}
+
+body{
+  background-color: rgb(227 232 238);
+}
+.text-center {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.text-style{
+  text-decoration: none;
+  color: black;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.d-flex{
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+/* button  style */
+.btn{
+  padding: 8px 15px;
+  background-color: rgba(16, 141, 4, 0.84);
   color: white;
+  border: none;
+  align-items: center;
+  font-style: bold;
+  font-size: 15px;
+  
+}
+.btn:hover {
+  cursor: pointer;
+  opacity: 0.7;
 }
 
-.App-link {
-  color: #61dafb;
+.head{
+  width: 200px;
+  height: 50px;
+ align-items: center;
+ justify-content: space-between;
+ background-color: rgb(255, 255, 255);
+ padding:0px 15px;
+ border-end-end-radius:  30px;
+ border-start-end-radius:  30px;
+ margin: 15px 0px 50px 0px;
+ position: relative;
+}
+.head .logo{
+  position: absolute;
+  top: -5px;
+}
+.head h1{
+  font-size: 20px;
+}
+.p-btn{
+  width: 200px;
+  padding: 15px 0px;
+  background-color: transparent;
+  color: rgb(0, 0, 0);
+  font-size: 15px;
+  border: none;
+  border-end-end-radius:  30px;
+  border-start-end-radius:  30px;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+}
+.p-btn:hover{
+  background-color: rgba(84, 136, 122, 0.849);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+
+/* project card */
+.project-card{
+  align-items: center;
+  width: 200px;
+  height: 40px;
+  margin: 10px 0px;
+  /* background-color: rgb(255, 0, 0) 20%; */
+  border-left: 5px solid red;
+  border-end-end-radius:  30px;
+  border-start-end-radius:  30px;
+  padding: 10px 10px 15px 10px;
+  box-shadow: 0px 1px 2px rgba(0,0,0,.5);
+
+}
+
+.projTitle{
+  margin:0px 25px;
+  width: 100px;
+  text-overflow: ellipsis;
+  text-wrap:nowrap;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.project-card:hover{
+  opacity: 0.7;
+}
+.project-card button{
+  display: none;
+}
+.project-card:hover> button{
+  
+  display: block;
+}
+/* side bottom bar */
+
+.sidebar-bottom{
+  /* position: absolute; */
+
+  border: 1px solid rgba(128, 128, 128, 0.374);
+  /* width: 97%; */
+  /* bottom: 10px; */
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  padding: 10px 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 35px;
+}
+ .sidebar-bottom:hover{
+  border: 1px solid grey;
+  transition: all .3s;
+  cursor: pointer;
+}
+ .sidebar-bottom:hover>svg{
+  fill: var(--clr-hover-icons);
+}
+ .sidebar-bottom svg{
+  width: 20px;
+  height: 20px;
+  fill: var(--clr-icons);
+
+}
+
+@media screen and (width<1037px){
+  .sideBar{
+      transition: all .4s;
+
+      margin-left: -150px;
+    box-shadow: 1px 0px 5px rgba(52, 46, 46, 0.644);
   }
-  to {
-    transform: rotate(360deg);
+  .sideBar:hover{
+    margin-left: 0px;
   }
+}
+
+/* side bottom bar end */
+
+.container{
+  width: 800px;
+  min-height: 1100px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 1px 1px 3px  rgba(0,0,0,.5);
+  margin: auto;
+  padding: 20px 50px;
+}
+.sub-upper-part-2>p{
+  margin-right: 300px;
+  font-size: 20px;
+  font-weight: 600;
+  
+}
+.sub-upper-part, .sub-upper-part-2, .sub-lower-part{
+  justify-content: space-between;
+}
+
+.upperBar{
+  justify-content: space-between;
+  align-items: center;
+  margin: 30px;
+  width: 800px;
+}
+
+
+.upperBar .file{
+  border: 1px solid rgb(59, 51, 51);
+  background-color: white;
+  border-left:none ;
+  color: black;
+}
+/* add-citation */
+/* .dialog{
+  margin: auto;
+  border: none;
+}
+.dialog::backdrop{
+    background: rgba(0, 0, 0, 0.502);
+} */
+
+ .add-citation-div{
+  outline: 2px solid yellow;
+  
+}
+.add-citation{
+   outline: 2px solid rgb(255, 77, 0);
+  width: 600px;
+  height: 500px;
+  background: white;
+  position: relative;
+  /* border: 2px solid black; */
+  box-shadow: 1px 1px 5px #0000009e;
+}
+/* not working this prooperty */
+.add-citation::backdrop{
+  background: rgba(0, 0, 0, 0.502);
+}
+ .add-citation .div-1{
+  justify-content: space-between;
+}
+ .add-citation .div-2 .div-2-1 button,.div-2-2 button{
+  width: 120px;
+  height: 40px;
+}
+.dialog-btn{
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: none;
+}
+.dialog-btn:hover{
+  cursor: pointer;
+  border-radius: 20px;
+  background: rgba(84, 136, 122, 0.849);
+}
+.div-2-2{
+  padding: 10px;
+}
+.dialog-input{
+  width: 370px;
+  height: 40px;
+  border: none;
+  box-shadow: 0 0 2px black;
+  padding-left: 10px;
+}
+.drag-drop{
+  /* margin: 40px 0; */
+  padding: 20px;
+  font-size: 16px;
+  border: 6px dashed rgba(196, 196, 196, 0.995);
+}
+.add-manual{
+  width: max-content;
+  margin:auto;
+  padding: 20px;
+  border: 2px dashed black;
+
+}
+.more-part{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 600px;
+  height: 400px;
+  background: rgb(234, 234, 229);
+  padding: 20px;
+  position: absolute;
+  top: 80px;
+  display: none;
+}
+/* .more-part .more{} */
+.more-part .more-text{
+  text-decoration: none;
+  color: black;
+  padding: 10px;
+  width: max-content;
+  /* height: 40px; */
+  background-color: aqua;
+}
+
+/* import slide */
+ .import-slide{
+  position: absolute;   
+  background-color: white;
+  box-shadow: 50px 50px 200px grey;
+  bottom: -100vh;
+  right: 0;
+  left: 0;
+  height: 300px;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 20px;
+  transition: all .2s;
+
+}
+ .import-slide .close-btn{
+
+  width: 36px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 10px;
+  border-radius: 50px;
+}
+ .import-slide h2{
+  position: absolute;
+  top: 20px;
+  left: 47%;
+  font-size: 25px;
+}
+ .import-slide .close-btn:hover
+{
+  background-color: rgba(0, 0, 0, 0.194);
+  cursor: pointer;
+}
+ .import-slide .import-card img{
+  width: 30px;
+
+}
+ .import-slide .import-card{
+ 
+padding: 20px;
+
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+gap: 5px;
+cursor: pointer;
+position: relative;
+width: 150px;
+}
+ .import-slide .import-card input{
+  font-size: 10px;
+  position: absolute;
+  bottom: -30px;
+  left: 0;
+}
+ .import-slide .import-card {
+  border: 1px solid grey;
 }
