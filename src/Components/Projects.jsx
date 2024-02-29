@@ -37,16 +37,16 @@ const Projects = ({ e, i,colors }) => {
         <span className="projTitle" onDoubleClick={EditprojTitlefun}>{e.name}</span>
        <input type="text" name="" id="EditprojTitle" style={{display:"none"}} />
         </div>
-        {/* <button id="projectBtn">:</button> */}
+        <button id="projectBtn"> <img className="threedot" src={threeDot} alt=":" width={30}/></button>
+       
         <div id="projectBtn-div">
-        <img className="threedot" src={threeDot} alt=":" width={30}/>
         <ul>
           <li><img src={rename} alt="ren" width={20} /> Rename</li>
           <li><img src={copy} alt="dup" width={20} /> Duplicate</li>
           <li><img src={merge} alt="mer" width={20} /> Merge</li>
           <li></li>
           <li>
-            <div><span style={{width:"20px"}}>O</span>Colors <span>&gt;</span></div>
+            <div className="d-flex mx-1"><div style={{width:"20px"}}>O</div>Colors <span>&gt;</span></div>
             <div className="">
               {colors.map(()=>{<div>o</div>})}
             </div>

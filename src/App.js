@@ -5,7 +5,7 @@ import SideBar, { SideBottomBar } from "./Components/SideBar";
 import Projects from "./Components/Projects";
 import { Routes, Route, Outlet, NavLink, Link } from "react-router-dom";
 import UpperBar from "./Components/UpperBar";
-import Importpart from "./Components/Importpart";
+// import Importpart from "./Components/Importpart";
 import AddCitation, { AddCiteHead } from "./Components/AddCitation";
 import AddCite5 from "./Components/AddCite5";
 import userAccount from "./images/user-account.png";
@@ -61,6 +61,7 @@ function App() {
     });
     setproject(newproject);
     setClorCount(clorCount + 1);
+   
     clorCount >= pBColor.length - 1 ? setClorCount(0) : <></>;
   };
 
@@ -69,10 +70,10 @@ function App() {
       <div className="App d-flex">
         <div
           className="sideBar"
-          style={{ position: "sticky", top: 0 ,height:"100vh"}}
+          style={{ position: "sticky", top: 0 ,height: window.screen.height}}
         >
           <SideBar />
-          <div style={{ height: "70vh", overflowY: "scroll" }}>
+          <div style={{ height: "70vh",overflowY:"scroll" }} className="SideInnerBar">
             {/* ---- */}
             <button onClick={addFunc} className="p-btn d-flex">
               <img
@@ -145,7 +146,7 @@ function App() {
           <SideBottomBar />
           </div>
         </div>
-        <div style={{ marginLeft: "50px" }}>
+        <div >
           {/* <UpperBar Open={Open} Close={setOpen} /> */}
           <Outlet />
           {/* <AddCitation/> */}

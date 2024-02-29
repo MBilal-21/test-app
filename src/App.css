@@ -3,8 +3,9 @@
   padding: 0%;
   box-sizing: border-box;
   font-family:"Roboto", sans-serif;
-  outline: 1px solid rgb(89, 255, 0);
+  scrollbar-color: #717376 var(--mainColor);
 }
+
 :root{
   --mainColor:#e3e8ee;
 }
@@ -32,13 +33,14 @@ body {
 /* button  style */
 .bton {
   padding: 8px 15px;
-  background-color: rgba(16, 141, 4, 0.84);
+  background-color: #34A853;
   color: white;
   border: none;
   align-items: center;
   font-style: bold;
   font-size: 15px;
   gap: 10px;
+  border-radius: 1px;
 }
 
 .bton:hover {
@@ -54,7 +56,7 @@ body {
 
 .head {
   width: 240px;
-  height: 54px;
+  height: 60px;
   align-items: center;
   justify-content: space-between;
   background-color: rgb(255, 255, 255);
@@ -99,15 +101,15 @@ body {
   align-items: center;
   justify-content: space-between;
   width: 240px;
-  height: 46px;
+  height: 40px;
   margin: 10px 0px;
   padding: 4px 16px;
-  /* background-color: rgb(255, 0, 0) 20%; */
   border-left: 4px solid red;
   border-end-end-radius: 30px;
   border-start-end-radius: 30px;
-  /* padding: 10px 10px 15px 10px; */
   box-shadow: 0px 1px 2px rgba(0, 0, 0, .5);
+  z-index: 1;
+  /* position: relative; */
 }
 
 .projTitle {
@@ -116,6 +118,7 @@ body {
   text-overflow: ellipsis;
   text-wrap: nowrap;
   overflow: hidden;
+
   white-space: nowrap;
 }
 
@@ -123,31 +126,49 @@ body {
   opacity: 0.7;
 }
 /*! -------------------------------------------------------- */
-.project-card #projectBtn-div {
-  display: none;
-}
-
-.project-card:hover>#projectBtn-div {
-  display: block;
-}
-
-#projectBtn-div ul{
+ .project-card button {
+  border: none;
+  background: none;
   display: none;
   position: absolute;
-  /* left: 220px; */
-  /* margin-top: 120px; */
-  background-color: white;
-  padding: 20px;
-  width: 240px;
+  left: 200px;
 }
-#projectBtn-div ul{
-  list-style: none;
-}
-#projectBtn-div:hover>.threedot:hover +  ul{
+
+.project-card:hover> button{
   display: block;
 }
 
+#projectBtn-div{
+  display: none;
+  position: absolute;
+ left: 220px;
+   margin-top: 170px;
+  background-color: white;
+  width: 190px;
+  z-index: 1000;
+}
+ #projectBtn-div ul{
+  list-style: none;
+  padding: 15px 10px;
+}
+.project-card:hover> button:hover + #projectBtn-div{
+  display: block;
+}
+
+
+
 /*! -------------------------------------------------------- */
+/* side inner bar */
+
+.SideInnerBar{
+  /* scrollbar-color: #717376 var(--mainColor); */
+
+ 
+  
+  
+}
+
+
 /* side bottom bar */
 
 .sidebar-bottom {
@@ -202,10 +223,22 @@ body {
   margin: auto;
   padding: 10px 20px;
 }
+.mainCheckBox{
+  width: 20px;
+  cursor:pointer;
+  accent-color: #4285f4;
+}
+.checkBox{
+  width: 20px;
+  cursor:pointer;
+  opacity: 0;
+accent-color: #4285f4;
+}
 .sub-lower-part{
   padding: 10px 0px;
   min-height: 40px;
   align-items: center;
+  cursor: zoom-in;
 }
 .HomeCiteButton{
   display: none;
@@ -213,6 +246,9 @@ body {
 .sub-lower-part:hover > .HomeCiteButton{
   display: block;
  
+}
+.sub-lower-part:hover >div> .checkBox{
+  opacity: 1;
 }
 .HomeCiteButton button{
   border: none;
@@ -232,6 +268,7 @@ body {
 .sub-lower-part {
   justify-content: space-between;
 }
+/* --------- */
 
 .upperBar {
   justify-content: space-between;
@@ -246,18 +283,33 @@ body {
 
 .sub-container-2 {
   width: 780px;
-  height: 220px;
+ 
   padding: 20px;
-  margin: auto;
-  justify-content: center;
-  align-items: center;
+  margin-top: 100px;
+
+}
+.sub-container-2  h1{
+  font-size: 18px;
+}
+.sub-container-2  p{
+  font-size: 14px;
 }
 
 
 .upperBar .file {
-  border: 1px solid rgb(59, 51, 51);
-  background-color: white;
+  border: 1px solid gray;
+  background-color: var(--mainColor);
   border-left: none;
+  color: black;
+  padding-bottom: 0;
+}
+.downloadBton{
+  background: #699CF2;
+  color: white;
+}
+.stylebtn{
+  background: var(--mainColor);
+  border: 2px solid gray;
   color: black;
 }
 
@@ -640,7 +692,8 @@ border-radius: 12px 0px 0px 20px;
     transition: all .4s;
 
     margin-left: -150px;
-    box-shadow: 1px 0px 5px rgba(52, 46, 46, 0.644);
+    /* box-shadow: 0px 0px 15px rgba(52, 46, 46, 0.644); */
+    border-right:1px groove rgb(118, 93, 93) ;
   }
 
   .sideBar:hover {
