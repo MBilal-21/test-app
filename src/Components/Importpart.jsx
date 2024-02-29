@@ -1,14 +1,25 @@
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
+import close from '../images/close.png'
+import uploadRIS from '../images/upload-ris.svg'
+import uploadBib from '../images/1_BIB-74-512.webp'
+import localB from '../images/file-backup.png'
+const Importpart = ({showImportPart,setShowImportPart}) => {
+  const showST = useRef();
+  useEffect(() => {
+    showImportPart
+      ? (showST.current.style= "display:flex;")
+      : (showST.current.style="display:none");
+  }, [showImportPart]);
 
-const Importpart = () => {
+ 
   return (
-    <div className="import-slide">
+    <div className="import-slide" ref={showST} >
   <h2>Import</h2>
-  <img src="images/close.png" alt="close" className="close-btn import-close" />
+  <img src={close} alt="close" className="close-btn import-close" onClick={()=>{setShowImportPart(false)}}/>
   <div className="import-card">
     <input type="file" accept=".ris" name="" id="ris-file" />
     <img
-      src="images/upload-minimalistic-svgrepo-com.svg"
+      src={uploadRIS}
       alt=""
       htmlFor="ris-file"
     />
@@ -16,12 +27,12 @@ const Importpart = () => {
   </div>
   <div className="import-card">
     <input type="file" name="" id="ris-file" />
-    <img src="images/1_BIB-74-512.webp" alt="" />
+    <img src={uploadBib} alt="" />
     <p>.Bib Text File</p>
   </div>
   <div className="import-card">
     <input type="file" accept=".ref" name="" id="ris-file" />
-    <img src="images/cloud-download-svgrepo-com.svg" alt="" />
+    <img src={localB} alt="" />
     <p>Local Backup</p>
   </div>
 </div>

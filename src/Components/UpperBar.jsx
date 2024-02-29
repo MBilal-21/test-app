@@ -1,33 +1,26 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import arrowForward from "../images/arrow-forward.svg";
 import download from "../images/download.svg";
-import {NavLink} from "react-router-dom"
+import {Link, NavLink} from "react-router-dom"
 import plus from "../images/plus.svg";
+import Importpart from "./Importpart";
 const UpperBar = () => {
-  // const st =(e)=>{
-  //   console.log(e);
-  //   return{
-  //     background: e.isActive? "pink":"red",
-  //     color : e.isActive?"black":'#f1c40f',
-  //      borderRadius:"5px",
-  //       boxShadow: '0 2px 8px rgba(0,0,0,.35)'
-  //   }
-  // }
+ const  [showImportPart, setShowImportPart] = useState(false);
+
   return (
-    <div className="d-flex upperBar">
+    <div className="d-flex upperBar" style={{position: 'sticky', top:'0'}}>
       <div className="d-flex">
-        <button className="btn d-flex"><img src={plus} alt="+" width={15} /> Add Citation</button>
-        <input  type="file" id="file"    style={{ display: "none" }}/>
-        <label className="file btn" htmlFor="file">
+       <Link to={"new"} className="link"> <button className="bton d-flex"><img src={plus} alt="+" width={15} /> Add Citation</button></Link>
+        <button className="file bton" onClick={()=>{showImportPart ? setShowImportPart(false):setShowImportPart(true)}} >
               Import
-            </label>
-            {/* <NavLink style = {st}>Hello</NavLink> */}
+            </button>
+          <Importpart showImportPart={showImportPart} setShowImportPart={setShowImportPart}/>
       </div>
 
       <img src={arrowForward} alt="arrowForward" width={30} />
-      <button className="btn">Select Font</button>
+      <button className="bton">Select Font</button>
       <img src={arrowForward} alt="arrowForward" width={30}/>
-      <button className="btn d-flex" style={{background:"rgba(45, 45, 216, 0.669)",color:"white"}}><img src={download} alt="dn" width={15} /> Download Works Cited</button>
+      <button className="bton d-flex" style={{background:"rgba(45, 45, 216, 0.669)",color:"white"}}><img src={download} alt="dn" width={15} /> Download Works Cited</button>
     </div>
   );
 };

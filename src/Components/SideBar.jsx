@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import sun from "../images/sun.svg";
 import bibIcon from "../images/bibIcon.svg";
-import noteAdd from "../images/note-stack-add.svg";
 import { Link } from "react-router-dom";
 
 const SideBottomBar = ()=>{
@@ -102,20 +101,18 @@ const SideBottomBar = ()=>{
 
   )
 }
-const SideBar = ({ addFunc }) => {
+const SideBar = () => {
   return (
     <div className="sidebar">
-      <Link to={"/"} className="text-style">
         <div className="d-flex head">
+      <Link to={"/"} className="text-style">
           <img src={bibIcon} alt="MyBib" width={35} className="logo" />
           <h1 style={{marginLeft:"35px"}}>MyBib</h1>
+      </Link>
           <img src={sun} alt="switch" width={20} height={20} />
         </div>
-      </Link>
 
-      <button onClick={addFunc} className="p-btn d-flex">
-      <img src={noteAdd} alt="+" width={25} style={{margin:"0px 6px"}}/>  Start new project
-      </button>
+     
     </div>
   );
 };

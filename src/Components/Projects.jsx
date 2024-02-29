@@ -1,79 +1,63 @@
-// import React, { useState } from "react";
-// import { NavLink } from "react-router-dom";
 
-// const Projects = ({ e, i}) => {
-//   const [states, setstates] = useState(false);
-//   const linkStyle = ({isActice}) =>{
-//     setstates(isActice);
-//     console.log(isActice, states);
-//     return{
-//       // background: isActice ?  e.BorderColor : 'white',
-//       // borderColor:e.BorderColor,
-//       // opacity : isActice? 0.5:1,
-//      color: isActice? 'red' : 'black',
-//     }
-//    }
-  
-//   // console.log(bg);
-//   const handleClick = (event) => {
-//     console.log(e.BorderColor);
-//     console.log(event.currentTarget);
-//     event.target.classList.toggle("active");
-//     console.log(event.target.classList);
-//     event.currentTarget.style.backgroundColor = e.BorderColor;
-//   };
-//   const test = {
-//     backgroundColor:"black"
-//   }
-//   return (
-//     <NavLink
-//       to={`project/${i}`}
-//       className="text-style"
-//       // style={linkStyle}
-//       activeStyle={linkStyle}
-//       // onClick={handleClick}
-//     >
-//       <div
-//         className="project-card d-flex"
-//         style={{ borderColor: e.BorderColor }}
-//       >
-//         <span>{e.counter}</span>
-//         <span className="projTitle">{e.name} </span>
-//         {/* <input type="text" value={e.name} onChange={(event)=>setName(event.target.value)}/> */}
-//         <button>:</button>
-//       </div>
-//     </NavLink>
-//   );
-// };
-
-// export default Projects;
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
+import threeDot from "../images/threedots_icon.png"
+import rename from "../images/rename.png"
+import copy from "../images/copy.png"
+import merge from "../images/merge.png"
+import archive from "../images/archev.png"
+import remove from "../images/icons8-delete-100.png"
 
-const Projects = ({ e, i }) => {
-    const linkStyle = (event) => {
-       return {
-        backgroundColor: event.isActive ? e.BorderColor+"80": "white",
-        borderColor: e.BorderColor,
-      };
+const Projects = ({ e, i,colors }) => {
+  const linkStyle = (event) => {
+    return {
+      backgroundColor: event.isActive ? e.BorderColor + "80" : "white",
+      borderColor: e.BorderColor,
     };
+  };
 
- 
+  const EditprojTitlefun = (e) =>{
+    console.log("edited");
+    // e.currentTarget.className ="editProjTitle";
+    e.currentTarget.style.display = 'none'
+    e.currentTarget.nextSibling.style.display = 'block'
+  }
 
   return (
     <>
-    <NavLink
-      to={`project/${i}/citations`}
-      className="text-style  project-card d-flex"
-      style={linkStyle}
+      <NavLink
+        to={`project/${i}/citations`}
+        className="text-style  project-card d-flex"
+        style={linkStyle}
       >
-      {/* <div className="project-card d-flex" style={{ borderColor: e.BorderColor }}> */}
+      
+        <div>
+
         <span>{e.counter}</span>
-        <span className="projTitle">{e.name}</span>
-        <button>:</button>
-      {/* </div> */}
-    </NavLink>
-      </>
+        <span className="projTitle" onDoubleClick={EditprojTitlefun}>{e.name}</span>
+       <input type="text" name="" id="EditprojTitle" style={{display:"none"}} />
+        </div>
+        {/* <button id="projectBtn">:</button> */}
+        <div id="projectBtn-div">
+        <img className="threedot" src={threeDot} alt=":" width={30}/>
+        <ul>
+          <li><img src={rename} alt="ren" width={20} /> Rename</li>
+          <li><img src={copy} alt="dup" width={20} /> Duplicate</li>
+          <li><img src={merge} alt="mer" width={20} /> Merge</li>
+          <li></li>
+          <li>
+            <div><span style={{width:"20px"}}>O</span>Colors <span>&gt;</span></div>
+            <div className="">
+              {colors.map(()=>{<div>o</div>})}
+            </div>
+          </li>
+          <li><img src={archive} alt="arc" width={20} /> Archive</li>
+          <li><img src={remove} alt="rev" width={20} /> Remove</li>
+        </ul>
+      </div>
+        
+      </NavLink>
+    </>
   );
 };
 
