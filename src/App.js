@@ -14,7 +14,6 @@ import help from "./images/help.png";
 import chrom from "./images/chrom.png";
 import lang from "./images/en-US.svg";
 import noteAdd from "./images/note-stack-add.svg";
-
 const AppState = createContext();
 
 function App() {
@@ -32,12 +31,11 @@ function App() {
       counter: 0,
       BorderColor: "#008000",
       data: [
-        { title: "name 2.1", srcId:null },
-        { title: "name 2.2", srcId:32 },
-        { title: "name 2.3", srcId:null },
-        { title: "name 2.4", srcId:null },
+        { title: "name 2.1", srcId: null },
+        { title: "name 2.2", srcId: 32 },
+        { title: "name 2.3", srcId: null },
+        { title: "name 2.4", srcId: null },
       ],
-      
     },
   ]);
   const pBColor = [
@@ -61,7 +59,7 @@ function App() {
     });
     setproject(newproject);
     setClorCount(clorCount + 1);
-   
+
     clorCount >= pBColor.length - 1 ? setClorCount(0) : <></>;
   };
 
@@ -70,10 +68,13 @@ function App() {
       <div className="App d-flex">
         <div
           className="sideBar"
-          style={{ position: "sticky", top: 0 ,height: window.screen.height}}
+          style={{ position: "sticky", top: 0, height: window.screen.height }}
         >
           <SideBar />
-          <div style={{ height: "70vh",overflowY:"scroll" }} className="SideInnerBar">
+          <div
+            style={{ height: "70vh", overflowY: "scroll" }}
+            className="SideInnerBar"
+          >
             {/* ---- */}
             <button onClick={addFunc} className="p-btn d-flex">
               <img
@@ -142,16 +143,17 @@ function App() {
             </div>
           </div>
           <div>
-
-          <SideBottomBar />
+            <SideBottomBar />
           </div>
         </div>
-        <div >
+
+        <div>
           {/* <UpperBar Open={Open} Close={setOpen} /> */}
           <Outlet />
           {/* <AddCitation/> */}
           {/* <Importpart /> */}
-          {/* </div> */}
+        </div>
+        <div>
           <div className="vertical-icons-upper-div">
             <div className="vertical-icons">
               <Link className="a">
@@ -182,9 +184,12 @@ function App() {
           <Route
             path="project/:id/citations"
             element={
-              <div className="main-content-citation">
-                <UpperBar />
-                <Home project={project} />
+              <div className="main-content-citation d-flex">
+                <div>
+                  <UpperBar />
+                  <Home project={project} />
+                </div>
+              
               </div>
             }
           >

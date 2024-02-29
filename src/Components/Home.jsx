@@ -6,6 +6,7 @@ import rename from "../images/rename.png"
 import webLang from "../images/webLang.svg"
 import plus from "../images/plus.svg";
 
+
 const Home = ({ project }) => {
   const { id } = useParams();
   const [isChecked, setIsChecked] = useState(false);
@@ -15,7 +16,7 @@ const Home = ({ project }) => {
       }
   },[isChecked])
 
-  return (
+  return (<div>
     <div className="cite-container-div">
      
         <div className="cite-container text-center">
@@ -52,7 +53,7 @@ const Home = ({ project }) => {
                 <div className="HomeCiteButton">
                   {item.srcId == "32" ?<button><img src={webLang} alt="go" width={20}/></button>:<></>}
                   <button><img src={rename} alt="edit" width={20} /></button>
-                  <button><img src={threeDot} alt=":" width={20} /></button>
+                  <button><img src={threeDot} alt=":" width={30} /></button>
                 </div>
               </div>
             );
@@ -63,8 +64,9 @@ const Home = ({ project }) => {
         </div>
           }
         </div>
-       
         
+       
+        </div>
    
       <Outlet/>
     </div>

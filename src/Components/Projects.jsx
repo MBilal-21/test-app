@@ -25,6 +25,7 @@ const Projects = ({ e, i,colors }) => {
 
   return (
     <>
+    <div className="project-card-container">
       <NavLink
         to={`project/${i}/citations`}
         className="text-style  project-card d-flex"
@@ -57,6 +58,7 @@ const Projects = ({ e, i,colors }) => {
       </div>
         
       </NavLink>
+      </div>
     </>
   );
 };

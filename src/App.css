@@ -12,6 +12,9 @@
 body {
   background-color: var(--mainColor);
 }
+.App{
+  justify-content: space-between;
+}
 
 .text-center {
   text-align: center;
@@ -32,7 +35,7 @@ body {
 
 /* button  style */
 .bton {
-  padding: 8px 15px;
+  padding: 5px 10px;
   background-color: #34A853;
   color: white;
   border: none;
@@ -97,6 +100,10 @@ body {
 
 
 /* project card */
+.project-card-container{
+  width: 240px;
+  height: 40px;
+}
 .project-card {
   align-items: center;
   justify-content: space-between;
@@ -130,8 +137,8 @@ body {
   border: none;
   background: none;
   display: none;
-  position: absolute;
-  left: 200px;
+  position: relative;
+  /* left: 200px; */
 }
 
 .project-card:hover> button{
@@ -143,9 +150,10 @@ body {
   position: absolute;
  left: 220px;
    margin-top: 170px;
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   width: 190px;
   z-index: 1000;
+  opacity: 1;
 }
  #projectBtn-div ul{
   list-style: none;
@@ -211,10 +219,22 @@ body {
 /* side bottom bar end */
 
 
-.main-content-citation{
-  width: 1000px;
-  margin: auto;
+.main-content-citation .CiteSideButton{
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  right: -22px;
 }
+.main-content-citation .CiteSideButton button{
+  border: none;
+  background: transparent;
+  opacity: 0.5;
+}
+.main-content-citation .CiteSideButton button:hover{
+  opacity: 1;
+}
+
 .cite-container {
   width: 820px;
   min-height: 940px;
@@ -268,6 +288,13 @@ accent-color: #4285f4;
 .sub-lower-part {
   justify-content: space-between;
 }
+.sub-upper-part{
+  opacity: 0.7;
+  cursor: pointer;
+}
+.sub-upper-part:hover{
+  opacity: 1;
+}
 /* --------- */
 
 .upperBar {
@@ -278,7 +305,7 @@ accent-color: #4285f4;
   height: 100px;
   background-color: rgb(227 232 238);
   z-index: 1;
-  margin: auto;
+  /* margin: auto; */
 }
 
 .sub-container-2 {
@@ -304,13 +331,23 @@ accent-color: #4285f4;
   padding-bottom: 0;
 }
 .downloadBton{
-  background: #699CF2;
+  background: #4285F4;
   color: white;
 }
+.arrowForword{
+  border: 2px solid gray;
+  border-radius: 25px;
+  opacity: 0.7;
+}
+
 .stylebtn{
   background: var(--mainColor);
-  border: 2px solid gray;
+  border: 1px solid gray;
   color: black;
+  opacity: 0.7;
+}
+.stylebtn:hover,.arrowForword:hover{
+  opacity: 1;
 }
 
 /* add-citation */
